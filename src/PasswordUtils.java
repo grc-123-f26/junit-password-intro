@@ -41,5 +41,19 @@ public class PasswordUtils {
         }
         return true;
     }
+    /**
+    * Checks whether a password has a character that is repeated at least three
+    * times in a row.
+    *
+    * For example, "paaasword" has the letter 'a' three times in a row.
+    *
+    * @param password the password to check
+    * @return true if password has a character repeated three times in a row, false otherwise
+    */
+    public static boolean containsTriple(String password) {
+    // TODO: Make tests FIRST, then implement the method
+    // Please have your tests in a separate commit from the implementation
+        return false;
+    }
 
 }
