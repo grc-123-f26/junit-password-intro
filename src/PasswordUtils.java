@@ -13,12 +13,17 @@ public class PasswordUtils {
      */
     public static String describePasswordLength(String password) {
         int length = password.length();
+
         if (length < 6) {
             return "short";
-        } else if (length <= 12) {
+        } else if (length < 12) {
             return "medium";
-        }
-        return "long";
+        } else if(length < 21) {
+            return "long";
+        } else {
+            return "extra long";
+        } 
+
     }
 
     /**
@@ -32,8 +37,6 @@ public class PasswordUtils {
             char c = password.charAt(i);
             if (!Character.isLetterOrDigit(c)) {
                 return false;
-            } else {
-                return true;
             }
         }
         return true;
