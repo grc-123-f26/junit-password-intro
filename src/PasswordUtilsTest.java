@@ -33,6 +33,19 @@ public class PasswordUtilsTest {
     }
 
     @Test 
+    void testDescribeIsAlphanumeric() {
+        // Arrange
+        String password = "abc123";
+        String password2 = "abc123!";
+        // Act
+        boolean actual = PasswordUtils.isAlphanumeric(password);
+        boolean actual2 = PasswordUtils.isAlphanumeric(password2);
+        // Assert
+        assertEquals(true, actual);
+        assertEquals(false, actual2);
+    }
+
+    @Test 
     void testDescribeContainsTriple() {
         // Arange
         String password = "paaasword";
