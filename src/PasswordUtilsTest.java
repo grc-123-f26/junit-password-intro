@@ -52,4 +52,26 @@ public class PasswordUtilsTest {
         assertEquals(true, actual);
     }
 
+    @Test
+    void testForBlankSpace(){
+        String word = "";
+        int actual = PasswordUtils.countSpecialCharacters(word);
+        assertEquals(0, actual);
+    }
+
+    @Test
+    void testForSpecial(){
+        String word = "HEll@W()r!d";
+        int actual = PasswordUtils.countSpecialCharacters(word);
+        assertEquals(4,actual);
+    }
+
+    @Test
+    void testForNoSpecial(){
+        String word = "HelloWorld";
+        int actual = PasswordUtils.countSpecialCharacters(word);
+        assertEquals(0, actual);
+    }
+
+
 }
