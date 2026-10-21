@@ -77,4 +77,13 @@ public class PasswordUtilsTest {
         //assert
         assertEquals(2, actual);
     }
+    @Test
+    void countSpecialCharactersWithSpaces() {
+                //arrange
+        String pwd = "& *sdj ) <";
+        //act
+        int actual = PasswordUtils.countSpecialCharacters(pwd);
+        //assert
+        assertEquals(4, actual);
+    }
 }
