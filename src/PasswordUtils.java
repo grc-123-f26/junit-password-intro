@@ -58,5 +58,19 @@ public class PasswordUtils {
             }
         } return false;
     }
+    /**
+    * Returns the number of special characters in the password.
+    *
+    * A special character is any non-alphanumeric (not letter or digit) character.
+    *
+    *
+    * @param password the password to check
+    * @return the count of special characters
+    */
+    public static int countSpecialCharacters(String password) {
+    // TODO: Make tests FIRST, then implement the method
+    // Please have your tests in a separate commit from the implementation
+        return 0;
+    }
 
 }
