@@ -50,5 +50,22 @@ public class PasswordUtilsTest {
         //assert
         assertEquals(true, actual);
     }
-
+    @Test
+    void containsTripleIsFalse() {
+                //arrange
+        String pwd = "Falalala";
+        //act
+        boolean actual = PasswordUtils.containsTriple(pwd);
+        //assert
+        assertEquals(false, actual);
+    }
+    @Test
+    void containsTripleCaseMatters() {
+                //arrange
+        String pwd = "Aaab";
+        //act
+        boolean actual = PasswordUtils.containsTriple(pwd);
+        //assert
+        assertEquals(true, actual);
+    }
 }
