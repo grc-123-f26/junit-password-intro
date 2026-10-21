@@ -78,6 +78,7 @@ public class PasswordUtils {
         int count = 0;
         for (int i = 0; i < password.length(); i++) {
             char c = password.charAt(i);
+            // check if character is NOT a letter or digit
             if (!Character.isLetterOrDigit(c)) {
                 count++;
             }
@@ -95,10 +96,12 @@ public class PasswordUtils {
     * @return true has the minimum number of special charcters or more, false otherwise
     */
     public static boolean hasSufficientSpecialCharacters(String password, int minimum) {
-    // TODO: Make tests FIRST, then implement the method
-    // Please have your tests in a separate commit from the implementation
-    // Required: please use countSpecialCharacters as a helper method.
-    // Don't just copy/paste the logic!
+        int count = countSpecialCharacters(password);
+        // using previous method to count special characters..
+        // check to see if it meets min requirement
+        if (count >= minimum) {
+            return true;
+        }
     return false;
     }
 
