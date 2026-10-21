@@ -109,8 +109,8 @@ public class PasswordUtilsTest {
     @Test
     void hasSufficientSpecialCharactersExact() {
                 //arrange
-        String pwd = "Hi!*$";
-        int min = 3;
+        String pwd = "Hi!*$^";
+        int min = 4;
         //act
         boolean actual = PasswordUtils.hasSufficientSpecialCharacters(pwd, min);
         //assert
