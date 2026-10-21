@@ -83,7 +83,7 @@ public class PasswordUtilsTest {
 
     @Test 
     void testForInsufficientSpecialCharater(){
-        String word = "Paaaswor$$$$%^d";
+        String word = "Paaaswor$$$d";
         int minimum = 4;
         boolean actual = PasswordUtils.hasSufficientSpecialCharacters(word,minimum);
         assertEquals(false, actual);
@@ -94,7 +94,7 @@ public class PasswordUtilsTest {
         String word = "";
         int minimum  =0;
         boolean actual = PasswordUtils.hasSufficientSpecialCharacters(word, minimum);
-        assertEquals(false, actual);
+        assertEquals(true, actual);
     }
 
 
