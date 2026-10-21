@@ -86,4 +86,24 @@ public class PasswordUtilsTest {
     //     //assert
     //     assertEquals(4, actual);
     // }
+    @Test
+    void hasSufficientSpecialCharactersTest() {
+                //arrange
+        String pwd = "!@#$%Hi* *";
+        int min = 3;
+        //act
+        boolean actual = PasswordUtils.hasSufficientSpecialCharacters(pwd, min);
+        //assert
+        assertEquals(true, actual);
+    }
+    @Test
+    void hasSufficientSpecialCharactersIsFalse() {
+                //arrange
+        String pwd = "Hi!*";
+        int min = 3;
+        //act
+        boolean actual = PasswordUtils.hasSufficientSpecialCharacters(pwd, min);
+        //assert
+        assertEquals(false, actual);
+    }
 }
