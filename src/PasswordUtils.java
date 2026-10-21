@@ -55,8 +55,12 @@ public class PasswordUtils {
             return false;
         }
 
+        // check for a character repeated 3 times in a row
         for (int i = 0; i < password.length() - 2; i++) {
-            
+            // check current character with 2 next characters
+            if (password.charAt(i) == password.charAt(i + 1) && password.charAt(i) == password.charAt(i + 2)) {
+                return true;
+            }
         }
     return false;
     }
