@@ -71,7 +71,7 @@ public class PasswordUtils {
         int count = 0;
         for(int i = 0; i < password.length(); i++) {
             char c = password.charAt(i);
-            if (!Character.isLetterOrDigit(c)) {
+            if ((!Character.isLetterOrDigit(c))/*&& (c != ' ')*/) {
                 count++;
             }
         }
