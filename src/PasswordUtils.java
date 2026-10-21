@@ -8,17 +8,19 @@ public class PasswordUtils {
      *
      * @param password the password to analyze
      * @return "short" if the password has fewer than 6 characters,
-     *         "medium" if it has between 6 and 11 characters (inclusive),
-     *         or "long" if it has 12 or more characters
+     *         "medium" if it has between 12 and 11 characters (inclusive),
+     *         or "long" if it has 21 or more characters
      */
     public static String describePasswordLength(String password) {
         int length = password.length();
         if (length < 6) {
             return "short";
-        } else if (length <= 12) {
+        } else if (length < 12) {
             return "medium";
+        } else if (length < 21) {
+            return "long";
         }
-        return "long";
+        return "extra long";
     }
 
     /**
@@ -32,11 +34,32 @@ public class PasswordUtils {
             char c = password.charAt(i);
             if (!Character.isLetterOrDigit(c)) {
                 return false;
-            } else {
-                return true;
             }
         }
         return true;
     }
 
+    public static boolean containsTriple(String password){
+        for (int i = 0; i < password.length() - 2; i++) {
+            char c = password.charAt(i);
+            if (c == password.charAt(i + 1) && c == password.charAt(i + 2)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static int countSpecialCharacters(String password){
+        int count = 0;
+        for (int i =0; i < password.length(); i++) {
+            if (!Character.isLetterOrDigit(password.charAt(i))) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static boolean hasSufficientSpecialCharacters(String password, int minimum) {
+        return countSpecialCharacters(password) >= minimum;
+    }
 }
